@@ -1,0 +1,25 @@
+# ignore and created directories
+*/classes
+*.class
+*/deploy
+*/deploy/
+*/*svn/
+.adf/
+.data/
+*.jsf_diagram
+*.adfc_diagram
+
+# package files
+*.jar
+*.war
+*.ear
+
+#project files
+#*.jws
+#*.jpr
+
+#dev specific properties files
+*_devfile_*
+
+#vim swap files
+*.swp

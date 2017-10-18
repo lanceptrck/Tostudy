@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="Cp1252" ?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://www.oracle.com/webfolder/technetwork/jsc/xml/ns/persistence/persistence_2_1.xsd"
+             version="2.1">
+    <persistence-unit name="ShoppingCartPU">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <jta-data-source>jdbc/ShoppingCartDBConnectionDS</jta-data-source>
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
+        <properties>
+            <property name="eclipselink.target-server" value="WebLogic_10"/>
+            <property name="javax.persistence.jtaDataSource" value="jdbc/ShoppingCartDBConnectionDS"/>
+            <property name="eclipselink.jdbc.batch-writing" value="Oracle-JDBC"/>
+            <property name="javax.persistence.validation.mode" value="none"/>
+            <property name="eclipselink.deploy-on-startup" value="true"/>
+            <property name="eclipselink.logging.level" value="FINEST"/>
+            <property name="eclipselink.logging.parameters" value="true"/>
+            <property name="eclipselink.logging.exceptions" value="true"/>
+            <property name="eclipselink.logging.logger" value="org.eclipse.persistence.logging.JavaLog"/>
+            <!--property name="eclipselink.logging.logger" value="org.eclipse.persistence.logging.JavaLog"/>
+            <property name="eclipselink.logging.exceptions" value="true"/>
+            <property name="eclipselink.logging.level" value="FINEST"/>
+            <property name="eclipselink.logging.parameters" value="true"/-->
+        </properties>
+    </persistence-unit>
+    <persistence-unit name="ShoppingCartPULocal" transaction-type="RESOURCE_LOCAL">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@127.0.0.1:1521:hr"/>
+            <property name="javax.persistence.jdbc.user" value="myadmin"/>
+            <property name="javax.persistence.jdbc.password" value="myadminpassword"/>
+            <property name="eclipselink.logging.logger" value="DefaultLogger"/>
+            <property name="eclipselink.logging.level" value="FINEST"/>
+            <property name="eclipselink.logging.parameters" value="true"/>
+            <property name="eclipselink.logging.exceptions" value="true"/>
+            <property name="eclipselink.jdbc.batch-writing" value="Oracle-JDBC"/>
+        </properties>
+    </persistence-unit>
+</persistence> 
+

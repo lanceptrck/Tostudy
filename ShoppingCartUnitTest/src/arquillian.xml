@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<arquillian xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://jboss.org/schema/arquillian"
+            xsi:schemaLocation="http://jboss.org/schema/arquillian http://jboss.org/schema/arquillian/arquillian_1_0.xsd">
+    <container qualifier="openejb" default="true">
+        <configuration>
+            <property name="properties">jdbc/ShoppingCartDBConnectionDS=new://Resource?type=DataSource
+                                        jdbc/ShoppingCartDBConnectionDS.JdbcDriver=oracle.jdbc.driver.OracleDriver
+                                        jdbc/ShoppingCartDBConnectionDS.JdbcUrl=jdbc:oracle:thin:@127.0.0.1:1521:hr
+                                        jdbc/ShoppingCartDBConnectionDS.UserName=myadmin
+                                        jdbc/ShoppingCartDBConnectionDS.Password=myadminpassword
+                                        jdbc/ShoppingCartDBConnectionDS.JtaManaged=true
+                                        jdbc/ShoppingCartDBConnectionDS.LogSql=true</property>
+        </configuration>
+    </container>
+    <extension qualifier="persistence">
+        <property name="defaultDataSource">openejb:Resource/ShoppingCartDBConnectionDS</property>
+    </extension>
+</arquillian>
